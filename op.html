@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Arithmetic Operations with Promises</title>
+  </head>
+  <body>
+    <p>Open Console</p>
+    <script>
+      function performOperation(operation, num1, num2) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            switch (operation) {
+              case '+':
+                resolve(num1 + num2);
+                break;
+              case '-':
+                resolve(num1 - num2);
+                break;
+              case '*':
+                resolve(num1 * num2);
+                break;
+              case '/':
+                if (num2 === 0) {
+                  reject('Error: Division by zero');
+                } else {
+                  resolve(num1 / num2);
+                }
+                break;
+              default:
+                reject('Error: Invalid operation');
+            }
+          }, 1000); 
+        });
+      }
+      let num1 = Number(prompt('Enter the first number:'));
+      let num2 = Number(prompt('Enter the second number:'));
+      async function main() {
+        try {
+          let result1 = await performOperation('+', num1, num2);
+          console.log(`${num1} + ${num2} = ${result1}`);
+          let result2 = await performOperation('-', num1, num2);
+          console.log(`${num1} - ${num2} = ${result2}`);
+          let result3 = await performOperation('*', num1, num2);
+          console.log(`${num1} * ${num2} = ${result3}`);
+          let result4 = await performOperation('/', num1, num2);
+          console.log(`${num1} / ${num2} = ${result4}`);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      main();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Linked List Implementation</title>
+</head>
+<body>
+    <script>
+class Node {
+	constructor(value) {
+		this.value = value;
+		this.next = null;
+	}
+}
+class LinkedList {
+	constructor() {
+		this.head = null;
+	}
+	addNode(value) {
+		let node = new Node(value);
+
+		if (this.head === null) {
+			this.head = node;
+		} else {
+			let current = this.head;
+			while (current.next !== null) {
+				current = current.next;
+			}
+			current.next = node;
+		}
+	}
+	removeNode() {
+		if (this.head === null) {
+			return null;
+		}
+
+		if (this.head.next === null) {
+			this.head = null;
+			return null;
+		}
+
+		let current = this.head;
+		while (current.next.next !== null) {
+			current = current.next;
+		}
+
+		current.next = null;
+	}
+	displayList() {
+		let current = this.head;
+		let listString = "";
+
+		while (current !== null) {
+			listString += current.value + " -> ";
+			current = current.next;
+		}
+
+		listString += "null";
+		document.getElementById("linked-list").innerHTML = listString;
+	}
+}
+
+let linkedList = new LinkedList();
+function addNode() {
+	let nodeValue = document.getElementById("node-value").value;
+	linkedList.addNode(nodeValue);
+	linkedList.displayList();
+}
+function removeNode() {
+	linkedList.removeNode();
+	linkedList.displayList();
+}
+
+    </script>
+	<h1>Linked List Implementation</h1>
+	
+	<label for="node-value">Enter node value:</label>
+	<input type="text" id="node-value">
+	<button onclick="addNode()">Add Node</button>
+	<button onclick="removeNode()">Remove Node</button>
+	
+	<div id="linked-list"></div>
+</body>
+</html>

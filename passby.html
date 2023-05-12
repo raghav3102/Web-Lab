@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pass by Value vs Pass by Reference</title>
+  </head>
+  <body>
+    <script>
+      const double = (num) => {
+        num *= 2;
+        return num;
+      };
+      const append = (arr, element) => {
+        arr.push(element);
+        return arr;
+      };
+      let x = 5;
+      console.log("Before calling double: " + x); // 5
+      let y = double(x);
+      console.log("After calling double: " + x); // 5
+      console.log("Returned value from double: " + y); // 10
+      let myArr = [1, 2, 3];
+      console.log("Before calling append: " + myArr); // [1, 2, 3]
+      let newArr = append(myArr, 4);
+      console.log("After calling append: " + myArr); // [1, 2, 3, 4]
+      console.log("Returned value from append: " + newArr); // [1, 2, 3, 4]
+    </script>
+    <p>Open console to see result</p>
+  </body>
+</html>

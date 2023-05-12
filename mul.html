@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiple Callback Functions with Promises</title>
+	<script>
+		function fetchData() {
+			const promise = new Promise((resolve, reject) => {
+				const data = {name: 'John', age: 30};
+				setTimeout(() => {
+					if (data) {
+						resolve(data); 
+					} else {
+						reject('Error fetching data'); 
+					}
+				}, 2000); 
+			});
+
+			return promise; 
+		}
+		fetchData().then((data) => {
+			console.log('Data fetched successfully', data);
+		}).catch((error) => {
+			console.log(error);
+		});
+	</script>
+</head>
+<body>
+	<h1>Multiple Callback Functions with Promises</h1>
+    <p>Open Console</p>
+</body>
+</html>

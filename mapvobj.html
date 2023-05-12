@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map vs Object performance</title>
+	<script>
+		const map = new Map();
+		console.time('map-add');
+		for (let i = 0; i < 100000; i++) {
+		  map.set(`key${i}`, `value${i}`);
+		}
+		console.timeEnd('map-add'); 
+	const obj = {};
+	console.time('obj-add');
+	for (let i = 0; i < 100000; i++) {
+	  obj[`key${i}`] = `value${i}`;
+	}
+	console.timeEnd('obj-add'); 
+	console.time('map-delete');
+	for (let i = 0; i < 100000; i++) {
+	  map.delete(`key${i}`);
+	}
+	console.timeEnd('map-delete'); 
+	console.time('obj-delete');
+	for (let i = 0; i < 100000; i++) {
+	  delete obj[`key${i}`];
+	}
+	console.timeEnd('obj-delete'); 
+</script>
+</head>
+<body>
+	<h1>Map vs Object performance</h1>
+	<p>Open the console to view the results.</p>
+</body>
+</html>

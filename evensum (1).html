@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sum of Even Numbers in an Array</title>
+  </head>
+  <body>
+    <script>
+      const sumEvenNumbers = (array) => {
+        let sum = 0;
+        for (let i of array) {
+          if (i % 2 === 0) {
+            sum += i;
+          }
+        }
+        return sum;
+      };
+
+      let numList = prompt("Enter a list of numbers, separated by commas:");
+      let nums = numList.split(",").map(Number);
+
+      let result = sumEvenNumbers(nums);
+
+      document.write("The sum of even numbers in the list " + nums + " is " + result);
+    </script>
+  </body>
+</html>

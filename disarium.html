@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Disarium Numbers</title>
+  </head>
+  <body>
+    <script>
+      function isDisarium(n) {
+        let sum = 0;
+        let digits = n.toString().split('');
+        for (let i = 0; i < digits.length; i++) {
+          sum += Math.pow(parseInt(digits[i]), i + 1);
+        }
+        return sum === n;
+      }
+
+      for (let i = 1; i <= 100; i++) {
+        if (isDisarium(i)) {
+          document.write(i + ' is a Disarium number<br>');
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter String Length</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<script>
+		const getStringsByLength = (arr) => {
+			const len = parseInt(prompt("Enter the Length of the String:"));
+			return arr.filter(str => str.length === len);
+		}
+
+		const strings = ["apple", "banana", "orange", "pear", "grape", "kiwi"];
+		const filteredStrings = getStringsByLength(strings);
+		alert(filteredStrings);
+	</script>
+</body>
+</html>

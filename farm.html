@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Farm Inventory</title>
+</head>
+<body>
+    <p>Open Console</p>
+	<script>
+		function zeroPad(number, width) {
+			let padded = String(number);
+			while (padded.length < width) {
+				padded = "0" + padded;
+			}
+			return padded;
+		}
+
+		function printFarmInventory(cows, chickens) {
+			console.log(zeroPad(cows, 3) + " Cows     " + zeroPad(chickens, 3) + " Chickens");
+		}
+
+		let cowCount = prompt("Enter the number of cows on the farm:");
+		let chickenCount = prompt("Enter the number of chickens on the farm:");
+
+		printFarmInventory(cowCount, chickenCount);
+	</script>
+</body>
+</html>

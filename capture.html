@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>useCapture parameter example</title>
+</head>
+<body>
+	<div id="outer">
+		<p id="inner">Click me</p>
+	</div>
+
+	<script>
+		let outer = document.getElementById('outer');
+		let inner = document.getElementById('inner');
+
+		outer.addEventListener('click', () => {
+			alert('outer clicked - capturing');
+		}, true);
+
+		inner.addEventListener('click', () => {
+			alert('inner clicked - bubbling');
+		}, false);
+	</script>
+</body>
+</html>

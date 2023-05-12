@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript map() Function Example</title>
+</head>
+<body>
+	<script>
+		const multiplyByTen = (arr) => {
+			return arr.map(num => num * 10);
+		}
+		let input = prompt("Enter an array of numbers separated by comma:");
+		let nums = input.split(",").map(Number);
+		document.write("Result: " + multiplyByTen(nums));
+	</script>
+</body>
+</html>

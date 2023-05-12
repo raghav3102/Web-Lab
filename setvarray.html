@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Set vs Array Performance</title>
+  </head>
+  <body>
+    <h1>Set vs Array Performance</h1>
+    <p>Open Console</p>
+    <script>
+      const set = new Set();
+      for (let i = 0; i < 100000; i++) {
+        set.add(`value${i}`);
+      }
+      console.time('set-search');
+      const searchValue = 'value99999';
+      const isValuePresent = set.has(searchValue);
+      console.timeEnd('set-search'); 
+      const arr = [];
+      for (let i = 0; i < 100000; i++) {
+        arr.push(`value${i}`);
+      }
+      console.time('arr-search');
+      const isValuePresentInArr = arr.includes(searchValue);
+      console.timeEnd('arr-search'); 
+    </script>
+  </body>
+</html>

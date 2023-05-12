@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binary Search Tree</title>
+	<script type="text/javascript">
+		class Node {
+			constructor(value) {
+				this.value = value;
+				this.left = null;
+				this.right = null;
+			}
+		}
+
+		class BinarySearchTree {
+			constructor() {
+				this.root = null;
+			}
+
+			insert(value) {
+				const newNode = new Node(value);
+				if (this.root === null) {
+					this.root = newNode;
+					return this;
+				}
+				let currentNode = this.root;
+				while (true) {
+					if (value === currentNode.value) return undefined;
+					if (value < currentNode.value) {
+						if (currentNode.left === null) {
+							currentNode.left = newNode;
+							return this;
+						}
+						currentNode = currentNode.left;
+					} else {
+						if (currentNode.right === null) {
+							currentNode.right = newNode;
+							return this;
+						}
+						currentNode = currentNode.right;
+					}
+				}
+			}
+
+			find(value) {
+				if (this.root === null) return false;
+				let currentNode = this.root;
+				let found = false;
+				while (currentNode && !found) {
+					if (value < currentNode.value) {
+						currentNode = currentNode.left;
+					} else if (value > currentNode.value) {
+						currentNode = currentNode.right;
+					} else {
+						found = true;
+					}
+				}
+				if (!found) return false;
+				return currentNode;
+			}
+
+			remove(value) {
+				const removeNode = (node, value) => {
+					if (node === null) {
+						return null;
+					}
+					if (value === node.value) {
+						// node has no children
+						if (node.left === null && node.right === null) {
+							return null;
+						}
+						// node has no left child
+						if (node.left === null) {
+							return node.right;
+						}
+						// node has no right child
+						if (node.right === null) {
+							return node.left;
+						}
+						// node has two children
+						let tempNode = node.right;
+						while (tempNode.left !== null) {
+							tempNode = tempNode.left;
+						}
+						node.value = tempNode.value;
+						node.right = removeNode(node.right, tempNode.value);
+						return node;
+					} else if (value < node.value) {
+						node.left = removeNode(node.left, value);
+						return node;
+					} else {
+						node.right = removeNode(node.right, value);
+						return node;
+					}
+				};
+				this.root = removeNode(this.root, value);
+			}
+		}
+
+		const bst = new BinarySearchTree();
+		bst.insert(10);
+		bst.insert(5);
+		bst.insert(13);
+		bst.insert(3);
+		bst.insert(7);
+		bst.insert(11);
+		bst.insert(16);
+
+		console.log(bst.find(3));
+		console.log(bst.find(16));
+		console.log(bst.find(20));
+
+		bst.remove(10);
+		console.log(bst);
+	</script>
+</head>
+<body>
+	<h1>Binary Search Tree</h1>
+	<p>Open your browser console to see the output.</p>
+</body>
+</html>

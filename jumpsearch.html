@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jump Search</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<script>
+		const key = parseInt(prompt("Enter the key to search:"));
+		const nums = prompt("Enter a list of numbers separated by commas:").split(",").map(num => parseInt(num));
+		const jumpSearch = (key, nums) => {
+			const n = nums.length;
+			const jumpSize = Math.floor(Math.sqrt(n));
+			let left = 0;
+			let right = 0;
+			while (right < n && nums[right] < key) {
+				left = right;
+				right = Math.min(right + jumpSize, n - 1);
+			}
+			for (let i = left; i <= right; i++) {
+				if (nums[i] === key) {
+					return i;
+				}
+			}
+			return -1;
+		}
+		const index = jumpSearch(key, nums);
+		if (index === -1) {
+			alert(`Key ${key} not found in the list.`);
+		} else {
+			alert(`Key ${key} found at index ${index}.`);
+		}
+	</script>
+</body>
+</html>

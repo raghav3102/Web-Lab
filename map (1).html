@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onclick="addValues()">Add Values to Map</button>
+    <button onclick="getValue()">Get Value from Map</button>
+    <button onclick="iterateMap()">Iterate over Map</button>
+    <script>
+      let myMap = new Map();
+
+      function addValues() {
+        myMap.set("apple", 3);
+        myMap.set("banana", 6);
+        myMap.set("orange", 4);
+        myMap.set("grape", 2);
+        alert("Values added to Map!");
+      }
+
+      function getValue() {
+        let fruit = prompt("Enter a fruit name to get the quantity from the Map:");
+        let quantity = myMap.get(fruit);
+        if (quantity) {
+          alert(`The quantity of ${fruit} is ${quantity}`);
+        } else {
+          alert("Fruit not found in Map!");
+        }
+      }
+
+      function iterateMap() {
+        let result = "Map Content:\n";
+        myMap.forEach(function(value, key) {
+          result += `${key} - ${value}\n`;
+        });
+        alert(result);
+      }
+    </script>
+  </body>
+</html>

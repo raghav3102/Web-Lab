@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Even or Odd</title>
+</head>
+<body>
+	<h1>Even or Odd</h1>
+	<ul id="output"></ul>
+	
+	<script>
+		let output = document.getElementById('output');
+		for (let i = 0; i <= 15; i++) {
+			let li = document.createElement('li');
+			if (i % 2 === 0) {
+				li.innerText = i + ' is even';
+			} else {
+				li.innerText = i + ' is odd';
+			}
+			output.appendChild(li);
+		}
+	</script>
+</body>
+</html>

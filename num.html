@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>numTest Function</title>
+</head>
+<body>
+	<script>
+		function numTest(number) {
+			return new Promise(function(resolve, reject) {
+				if (number < 20) {
+					resolve(number + " is less than 20");
+				} else if (number > 20) {
+					resolve(number + " is greater than 20");
+				} else {
+					reject("Error: " + number + " is equal to 20");
+				}
+			});
+		}
+
+		let num = prompt("Enter a number:");
+		numTest(num)
+			.then(function(result) {
+				alert(result);
+			})
+			.catch(function(error) {
+				alert(error);
+			});
+	</script>
+</body>
+</html>

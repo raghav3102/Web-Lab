@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alphabetical Order</title>
+  </head>
+  <body>
+    <label for="string">Enter a string:</label>
+    <input type="text" id="string" />
+    <br />
+    <button id="alphabeticalOrderBtn">Sort in alphabetical order</button>
+    <br />
+    <label for="result">Result:</label>
+    <span id="result"></span>
+
+    <script>
+      const btn = document.getElementById("alphabeticalOrderBtn");
+      const input = document.getElementById("string");
+      const result = document.getElementById("result");
+
+      btn.addEventListener("click", () => {
+        const sortedString = input.value.split("").sort().join("");
+        result.textContent = sortedString;
+      });
+    </script>
+  </body>
+</html>

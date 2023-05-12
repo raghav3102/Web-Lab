@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dash Twixt 2 Evens</title>
+    <script>
+      const dashTwixt2Evens = num => {
+        let str = num.toString();
+        let result = '';
+
+        for (let i = 0; i < str.length; i++) {
+          if (parseInt(str[i]) % 2 === 0 && parseInt(str[i + 1]) % 2 === 0) {
+            result += str[i] + '-';
+          } else {
+            result += str[i];
+          }
+        }
+
+        return result;
+      };
+
+      function handleInput() {
+        let num = prompt("Enter a number:");
+        let result = dashTwixt2Evens(num);
+        alert(result);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="handleInput()">Click to enter a number</button>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Print Numbers Backwards</title>
+</head>
+<body>
+	<h1>Print Numbers Backwards</h1>
+	<p id="output1"></p>
+	<script>
+		let output1 = "";
+		for (let i = 100; i >= 1; i -= 3) {
+			output1 += i + " ";
+		}
+		document.getElementById("output1").innerHTML = output1;
+	</script>
+    <h1>Print Alternate Numbers</h1>
+	<p id="output"></p>
+	<script>
+		let output = "";
+		for (let i = 0; i <= 100; i += 2) {
+			output += i + " ";
+		}
+		document.getElementById("output").innerHTML = output;
+	</script>
+</body>
+</html>

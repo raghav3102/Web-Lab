@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculate Average of Numbers</title>
+  </head>
+  <body>
+    <script>
+      const calculateAverage = (numbers) => {
+        let sum = 0;
+        for (let number of numbers) {
+          sum += number;
+        }
+        return sum / numbers.length;
+      };
+
+      const inputString = prompt("Enter comma-separated numbers:");
+      const inputNumbers = inputString.split(",").map(Number);
+
+      const average = calculateAverage(inputNumbers);
+      document.write(`The average is ${average}`);
+    </script>
+  </body>
+</html>

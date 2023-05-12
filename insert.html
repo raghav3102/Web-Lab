@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insert and Remove Elements from an Array</title>
+</head>
+<body>
+
+	<script>
+		function insertElement(arr, index, element) {
+			arr.splice(index, 0, element);
+			return arr;
+		}
+		function removeElement(arr, index) {
+			arr.splice(index, 1);
+			return arr;
+		}
+		let input = prompt("Enter the array elements separated by commas:");
+		let arr = input.split(",");
+		let index = prompt("Enter the index at which to insert or remove an element:");
+		let action = prompt("Do you want to insert or remove an element?");
+
+		if (action === "insert") {
+			let element = prompt("Enter the element to insert:");
+			document.write("Array after inserting " + element + " at index " + index + ": " + insertElement(arr, index, element));
+		} else if (action === "remove") {
+			document.write("Array after removing element at index " + index + ": " + removeElement(arr, index));
+			} else {
+			document.write("Invalid action entered!");
+		}
+
+	</script>
+
+</body>
+</html>

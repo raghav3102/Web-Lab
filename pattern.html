@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pattern Display</title>
+  </head>
+  <body>
+    <script>
+      for (var i = 1; i <= 5; i++) {
+        var row = '';
+        for (var j = 1; j <= i; j++) {
+          row += '* ';
+        }
+        document.write(row + '<br>');
+      }
+    </script>
+    <pre id="pattern"></pre>
+	
+	<script>
+		let pattern = '';
+		for (let i = 5; i >= 1; i--) {
+			for (let j = 1; j <= i; j++) {
+				pattern += '* ';
+			}
+			pattern += '\n';
+		}
+		document.getElementById('pattern').innerText = pattern;
+	</script>
+  </body>
+</html>

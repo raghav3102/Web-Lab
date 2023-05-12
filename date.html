@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>System Date and Time</title>
+</head>
+<body>
+  <h1>System Date and Time</h1>
+  <button id="btn">Display Date and Time</button>
+  <p id="output"></p>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const output = document.getElementById('output');
+
+    btn.addEventListener('click', () => {
+      const date = new Date();
+      output.innerText = `Current Date and Time: ${date.toLocaleString()}`;
+    });
+  </script>
+</body>
+</html>

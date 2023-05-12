@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Queue Implementation using HTML</title>
+  </head>
+  <body>
+    <h2>Queue Implementation using HTML</h2>
+    <input type="text" id="input">
+    <button onclick="enqueue()">Enqueue</button>
+    <button onclick="dequeue()">Dequeue</button>
+    <div id="queue"></div>
+    <script>
+      const queue = [];
+      function enqueue() {
+        const input = document.getElementById('input').value;
+        queue.push(input);
+        updateQueue();
+      }
+      function dequeue() {
+        queue.shift();
+        updateQueue();
+      }
+      function updateQueue() {
+        const queueDiv = document.getElementById('queue');
+        queueDiv.innerHTML = '';
+        for (let i = 0; i < queue.length; i++) {
+          const element = document.createElement('p');
+          element.textContent = queue[i];
+          queueDiv.appendChild(element);
+        }
+      }
+    </script>
+  </body>
+</html>

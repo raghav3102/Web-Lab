@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Trip Planner</title>
+  </head>
+  <body>
+    <script>
+      function tripPlanner(location) {
+        return new Promise((resolve, reject) => {
+          if (location.toLowerCase() === "paris") {
+            resolve("Let's take a trip to Paris");
+          } else {
+            reject("Invalid Location");
+          }
+        });
+      }
+      
+      const location1 = prompt("Enter a location:");
+      tripPlanner(location1)
+        .then(result => console.log(result))
+        .catch(error => console.error(error));
+    </script>
+  </body>
+</html>

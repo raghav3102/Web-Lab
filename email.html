@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Pattern Matching</title>
+  </head>
+  <body>
+    <input type="text" id="email" placeholder="Enter Email Address">
+    <button onclick="checkEmail()">Check Email</button>
+    <p id="result"></p>
+
+    <script>
+      function checkEmail() {
+        const emailRegex = /^[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]+(?:\.[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
+        const email = document.getElementById("email").value;
+        if (emailRegex.test(email)) {
+          document.getElementById("result").innerHTML = "Matches the pattern";
+        } else {
+          document.getElementById("result").innerHTML = "Not matching";
+        }
+      }
+    </script>
+  </body>
+</html>

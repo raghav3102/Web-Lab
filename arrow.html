@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrow Functions Example</title>
+</head>
+<body>
+	<h1>Arrow Functions Example</h1>
+	<script>
+		const createFullName = (firstName, lastName) => firstName + " " + lastName;
+
+		const doubleNumber = number => number * 2;
+
+		const getEvenNumbers = array => {
+		  let evenNumbers = [];
+		  for (let i of array) {
+		    if (i % 2 === 0) {
+		      evenNumbers.push(i);
+		    }
+		  }
+		  return evenNumbers;
+		}
+
+		const fullName = createFullName("John", "Doe");
+		document.write("Full Name: " + fullName + "<br>");
+
+		const double = doubleNumber(5);
+		document.write("Double of 5: " + double + "<br>");
+
+		const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+		const evenNumbers = getEvenNumbers(numbers);
+		document.write("Even Numbers: " + evenNumbers);
+	</script>
+</body>
+</html>

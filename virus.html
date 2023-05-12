@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Virus Check</title>
+</head>
+<body>
+	<h1>Virus Check</h1>
+	<label for="virus">Enter virus composition:</label>
+	<input type="text" id="virus" />
+	<br><br>
+	<label for="blood">Enter blood composition:</label>
+	<input type="text" id="blood" />
+	<p id="output"></p>
+    <button onclick="check()">Check</button>
+	<script>
+		function check() {
+			let virus = document.getElementById("virus").value.toLowerCase();
+			let blood = document.getElementById("blood").value.toLowerCase();
+			let isPositive = isSubsequence(virus, blood);
+			if (isPositive) {
+				document.getElementById("output").innerHTML = "POSITIVE";
+			} else {
+				document.getElementById("output").innerHTML = "NEGATIVE";
+			}
+		}
+
+		function isSubsequence(str1, str2) {
+			let i = 0;
+			let j = 0;
+            let count = 0;
+			while (i < str1.length && j < str2.length) {
+				if (str1.charAt(i) == str2.charAt(j)) {
+					count++;
+                    i++;
+                    j++;
+				}
+                else{
+                    i++;
+                }
+			}
+			return count;
+		}
+	</script>
+</body>
+</html>

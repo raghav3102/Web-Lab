@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>String Methods Example</title>
+  </head>
+  <body>
+    <script>
+      let str = prompt("Enter a string:");
+      alert("Uppercase: " + str.toUpperCase());
+      alert("Lowercase: " + str.toLowerCase());
+      alert("Length: " + str.length);
+      let substr = prompt("Enter a substring to search for:");
+      let index = str.indexOf(substr);
+      if (index !== -1) {
+        alert("Index of first occurrence of \"" + substr + "\": " + index);
+      } else {
+        alert("\"" + substr + "\" not found in string.");
+      }
+      index = str.lastIndexOf(substr);
+      if (index !== -1) {
+        alert("Last index of \"" + substr + "\": " + index);
+      } else {
+        alert("\"" + substr + "\" not found in string.");
+      }
+      let start = parseInt(prompt("Enter starting index:"));
+      let end = parseInt(prompt("Enter ending index:"));
+      alert("Substring from index " + start + " to " + end + ": " + str.substring(start, end));
+      let oldSubstr = prompt("Enter a substring to replace:");
+      let newSubstr = prompt("Enter a new substring:");
+      alert("Replacing \"" + oldSubstr + "\" with \"" + newSubstr + "\": " + str.replace(oldSubstr, newSubstr));
+      let delimiter = prompt("Enter a delimiter to split the string:");
+      let arr = str.split(delimiter);
+      alert("Array: " + arr);
+    </script>
+  </body>
+</html>

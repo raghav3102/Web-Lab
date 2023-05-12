@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Counting Vowels in a String</title>
+  </head>
+  <body>
+    <h1>Counting Vowels in a String</h1>
+    <label for="input">Enter a string: </label>
+    <input type="text" id="input" />
+    <br />
+    <button id="countBtn">Count Vowels</button>
+    <p id="output"></p>
+    <script>
+      const countVowels = () => {
+        const input = document.getElementById("input").value;
+        const vowels = ["a", "e", "i", "o", "u"];
+        let count = 0;
+        for (let char of input) {
+          if (vowels.includes(char.toLowerCase())) {
+            count++;
+          }
+        }
+        const output = document.getElementById("output");
+        output.innerHTML = `The number of vowels in the string is ${count}.`;
+      };
+
+      document.getElementById("countBtn").addEventListener("click", countVowels);
+    </script>
+  </body>
+</html>

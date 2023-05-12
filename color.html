@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Code</title>
+</head>
+<body>
+	<h1>Color Code</h1>
+	<label for="code">Enter color code (R/B/G/O/Y/W):</label>
+	<input type="text" id="code" />
+	<button onclick="checkCode()">Check</button>
+	<p id="output"></p>
+	<script>
+		function checkCode() {
+			let code = document.getElementById("code").value.toUpperCase();
+			let color;
+			switch (code) {
+				case "R":
+					color = "Red";
+					break;
+				case "B":
+					color = "Blue";
+					break;
+				case "G":
+					color = "Green";
+					break;
+				case "O":
+					color = "Orange";
+					break;
+				case "Y":
+					color = "Yellow";
+					break;
+				case "W":
+					color = "White";
+					break;
+				default:
+					color = "Invalid Input";
+			}
+			document.getElementById("output").innerHTML = color;
+		}
+	</script>
+</body>
+</html>

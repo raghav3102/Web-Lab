@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weight Conversion</title>
+  </head>
+  <body>
+    <script>
+      const weightStatus = (kg) => {
+        const lbs = kg * 2.2;
+        if (lbs > 150) {
+          return "obese";
+        } else if (lbs >= 100 && lbs <= 150) {
+          return "you are ok";
+        } else {
+          return "underweight";
+        }
+      };
+      
+      const kg = prompt("Enter weight in Kg:");
+      const lbs = weightStatus(kg);
+      
+      alert(`Weight in Lbs: ${kg * 2.2}\nStatus: ${lbs}`);
+    </script>
+  </body>
+</html>

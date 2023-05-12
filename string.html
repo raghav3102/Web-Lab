@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript String Functions</title>
+    <script>
+      const capitalizeFirstLetter = (str) => {
+        return str.replace(/\b\w/g, (char) => {
+          return char.toUpperCase();
+        });
+      };
+      
+      const insertString = (originalStr, strToInsert, position) => {
+        return originalStr.slice(0, position) + strToInsert + originalStr.slice(position);
+      };
+      
+      const isString = (input) => {
+        return typeof input === 'string';
+      };
+      
+      const stringToArray = (str) => {
+        return str.split(' ');
+      };
+      const testString = "the quick brown fox jumps over the lazy dog";
+      
+      console.log(capitalizeFirstLetter(testString)); 
+      
+      console.log(insertString(testString, "red ", 4)); 
+      
+      console.log(isString(testString)); 
+
+      console.log(stringToArray(testString)); 
+      
+    </script>
+  </head>
+  <body>
+    <h1>JavaScript String Functions</h1>
+    <p>Open Console</p>
+  </body>
+</html>
